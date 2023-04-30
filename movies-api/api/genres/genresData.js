@@ -1,4 +1,17 @@
-export const genres= {
+import mongoose from 'mongoose';
+
+const Schema = mongoose.Schema;
+
+const GenreSchema = new Schema({
+id: { type: Number,  unique: true, required: true},
+name: {type: String, required: true }
+});
+
+export default mongoose.model('Genre', GenreSchema);
+
+
+
+/*export const genres= {
     "genres": [
         {
             "id": 28,
@@ -77,4 +90,4 @@ export const genres= {
             "name": "Western"
         }
     ]
-};
+};*/
